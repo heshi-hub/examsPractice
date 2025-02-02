@@ -24,13 +24,12 @@ int main(void)
 	{
 		printf("Enter n: ");
 
-		//if user input is not an integer program terminates
-		if (scanf("%d", &n) != 1) 
-			break;
-
-		//Clear keyboard input buffer
-		while (getchar() != '\n')
-			continue;
+		if (scanf("%d", &n) != 1)
+		{
+			while (getchar() != '\n') //Clear keyboard input buffer
+			  continue;
+			break; //if user input is not an integer program terminates
+		}
 
 		if (n < 0 || n > maxN)
 		{
